@@ -43,7 +43,7 @@ const assignMentor = async (req, res) => {
 
 const getMentorFromStudent = async (req, res) => {
   const { studentId } = req.params;
-
+ console.log(studentId)
   try {
     const student = await Student.findById(studentId).populate('mentorId', 'name', 'expertise');
     res.send(student.mentorId);
